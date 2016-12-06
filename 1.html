@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<SCRIPT language="JavaScript">
+<!--
+// 項目の合計を計算
+function ttlValue() {
+  chn = 10; // ラジオボタンとチェックボックスの総数
+  ttl = 0;
+  for(i=0; i<chn; i++) {
+    if(document.nForm.elements[i].checked) {
+      ttl += eval(document.nForm.elements[i].value);
+    }
+  }
+  document.nForm.result.value = ttl;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffff">
+<FORM name="nForm">
+ポケモンの数を選択してください。<BR>
+<INPUT type="radio" name="ch1" value="500" checked>1体 ：500円<BR>
+<INPUT type="radio" name="ch1" value="250">アイテムのみ1体：250円<BR>
+<BR>
+オプションを選択して下さい。（複数選択可）<BR>
+※アイテムのみの場合は選択しないでください。<BR>
+<INPUT type="checkbox" name="bx1" value="50">名付け：50円<BR>
+<INPUT type="checkbox" name="bx1" value="300">親名変更(ID含)：300円<BR>
+<INPUT type="checkbox" name="bx1" value="200">親名変更(ID無)：200円<BR>
+<INPUT type="checkbox" name="bx1" value="30">ポケルス：30円<BR>
+<INPUT type="checkbox" name="bx1" value="30">なつき度：30円<BR>
+<INPUT type="checkbox" name="bx1" value="30">出会った場所：30円<BR>
+<INPUT type="checkbox" name="bx1" value="50">わざPPMAX：50円<BR>
+<INPUT type="checkbox" name="bx1" value="100">出身国：100円<BR>
+
+<BR>
+<INPUT type="button" value="合計金額を計算" onClick="ttlValue()"><BR>
+<BR>
+合計金額：<INPUT type="text" name="result" size="10">
+</FORM>
+</BODY>
+</HTML>
